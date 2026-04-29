@@ -38,7 +38,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_timeago_pro: ^1.1.0
+  flutter_timeago_pro: ^1.1.1
 ```
 
 Then run:
@@ -65,6 +65,14 @@ Text(dateTime.toTimeagoFormat())
 
 dateTime.toTimeagoFormat(showTimeForOveraged: false);
 // → "Friday" | "15 Jan" | "15 Jan 2024"
+```
+
+### Custom timeago limit
+
+```dart
+// Override the default 1-hour limit to 3 hours
+dateTime.toTimeagoFormat(timeagoLimit: const Duration(hours: 3));
+// Output for 2h 30m ago → "2h ago"
 ```
 
 ### 24-hour clock
@@ -96,15 +104,6 @@ dateTime.toTimeagoFormat(
   referenceTime: DateTime(2024, 6, 15, 14, 30),
 );
 ```
-
-### Custom timeago limit
-
-```dart
-// Override the default 1-hour limit to 3 hours
-dateTime.toTimeagoFormat(timeagoLimit: const Duration(hours: 3));
-// Output for 2h 30m ago → "2h ago"
-```
-
 ---
 
 ## API
